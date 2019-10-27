@@ -15,3 +15,7 @@ app.get('/', function(req, res){
     res.render("index");
 
 });
+
+http.createServer(app).listen(port, function(){
+
+});
