@@ -17,7 +17,7 @@ app.get('/', function(req, res){
 
 });
 
-app.post('/random', function(req, res){
+app.get('/random', function(req, res){
     res.render('random.ejs');
 
 });
