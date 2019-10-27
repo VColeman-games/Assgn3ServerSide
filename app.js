@@ -12,16 +12,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ encoded: false}));
 
 app.get('/', function(req, res){
-    res.render("index");
+    res.render('index', {page:'Home', menuId:'home'})
 
-});
-app.get('/random', function(req, res){
-    res.redirect("/random");
 
 });
 
+app.post('/random', function(req, res){
+    res.render('random.ejs');
 
-
+});
 
 http.createServer(app).listen(port, function(){
 
