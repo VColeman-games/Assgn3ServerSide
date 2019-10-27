@@ -15,6 +15,9 @@ app.get('/', function(req, res){
     res.render("index");
 
 });
+app.get('/random', function(req, res){
+    red.render("index");
+});
 
 http.createServer(app).listen(port, function(){
 
