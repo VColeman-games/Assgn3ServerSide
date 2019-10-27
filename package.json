@@ -1,0 +1,23 @@
+{
+  "name": "assgn3serverside",
+  "version": "1.0.0",
+  "description": "Assignment 3",
+  "main": "app.js",
+  "dependencies": {
+    "app.json": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VColeman-games/Assgn3ServerSide.git"
+  },
+  "author": "Valencia Coleman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VColeman-games/Assgn3ServerSide/issues"
+  },
+  "homepage": "https://github.com/VColeman-games/Assgn3ServerSide#readme"
+}
