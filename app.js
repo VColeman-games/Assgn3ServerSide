@@ -13,17 +13,30 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ encoded: false}));
 
 app.get('/', function(req, res){
-    res.render('index', {page:'Home', menuId:'home'})
-
+function getComic(){
 fetch('https://xkcd.com/info.0.json')
- .then(function(res){
-    return res.json();
-}).then(function(json){
-    console.log(json);
-});
-json();
+.then(function(res){ return res.json()
+})
 
+.then(function(data) {
+    let output ='<h2>Comics</h2>';
+    data.forEach((comic) => {
+        const {title, month, day, year, img } = comic
+        output +=
+         `<div>
+                <h1> User ID: ${title} </h1>
+                <be>
+                    <h4>${month} "/" ${day} "/" ${year}</h4>
+                    <div class="d-flex justify-content-center"> <img src = ${img}></div>
+            </div>`;
+            document.getElementById('container').innerHTML = output;
+    });
+})
+  res.render('index', {page:'Home', menuId:'home'});
+}
 });
+
+
 
 app.get('/random', function(req, res){
     res.render('random.ejs');
@@ -34,3 +47,4 @@ app.get('/random', function(req, res){
 http.createServer(app).listen(port, function(){
 
 });
+
