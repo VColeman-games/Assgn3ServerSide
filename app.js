@@ -16,10 +16,12 @@ app.get('/', function(req, res){
     res.render('index', {page:'Home', menuId:'home'})
 
 fetch('https://xkcd.com/info.0.json')
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-  });
+ .then(function(res){
+    return res.json();
+}).then(function(json){
+    console.log(json);
+});
+
 
 });
 
