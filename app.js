@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ encoded: false}));
+app.use(bodyParser.urlencoded({ encoded: false}));
 
 app.get('/',  function(req, res){
 
@@ -35,7 +35,7 @@ fetch('https://xkcd.com/info.0.json')
 })
 
 }
- res.render('index' );
+ res.render('index', {data:data });
 });
 
 
