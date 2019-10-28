@@ -30,7 +30,7 @@ fetch('https://xkcd.com/info.0.json')
                     <h4>${month} "/" ${day} "/" ${year}</h4>
                     <div class="d-flex justify-content-center"> <img src = ${img}></div>
             </div>`;
-            document.getElementById('container').innerHTML = output;
+            document.getElementById('content').innerHTML = output;
     });
 })
 
