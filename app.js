@@ -36,7 +36,9 @@ fetch('https://xkcd.com/info.0.json')
             </div>`;
             document.getElementById('content').innerHTML = output;
     });
+
 })
+res.redirect('/');
 });
 
 
