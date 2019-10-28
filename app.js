@@ -21,7 +21,7 @@ fetch('https://xkcd.com/info.0.json')
 }).then(function(json){
     console.log(json);
 });
-
+json();
 
 });
 
