@@ -14,6 +14,9 @@ app.use(bodyParser.urlencoded({ encoded: false}));
 
 app.get('/',  function(req, res){
 
+
+ res.render('index');
+});
 function getComic(){
 fetch('https://xkcd.com/info.0.json')
 .then(function(res){  res.json()
@@ -35,9 +38,6 @@ fetch('https://xkcd.com/info.0.json')
 })
 
 }
- res.render('index', {data:data });
-});
-
 
 
 app.get('/random', function(req, res){
