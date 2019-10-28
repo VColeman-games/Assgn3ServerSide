@@ -17,7 +17,8 @@ app.get('/',  function(req, res){
 
  res.render('index');
 });
-function getComic(){
+
+app.post('/getComic', function (req, res){
 fetch('https://xkcd.com/info.0.json')
 .then(function(res){  res.json()
 })
@@ -36,8 +37,8 @@ fetch('https://xkcd.com/info.0.json')
             document.getElementById('content').innerHTML = output;
     });
 })
+});
 
-}
 
 
 app.get('/random', function(req, res){
