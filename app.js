@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ encoded: false}));
 
 app.get('/', function(req, res){
-      res.render('index', {page:'Home', menuId:'home'});
+
 function getComic(){
 fetch('https://xkcd.com/info.0.json')
 .then(function(res){ return res.json()
@@ -35,6 +35,7 @@ fetch('https://xkcd.com/info.0.json')
 })
 
 }
+ res.render('index' );
 });
 
 
