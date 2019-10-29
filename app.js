@@ -12,6 +12,10 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ encoded: false}));
 
+
+
+
+
 app.get('/',  function(req, res){
 
 
@@ -29,9 +33,9 @@ fetch('https://xkcd.com/info.0.json')
         const {title, month, day, year, img } = comic
         output +=
          `<div>
-                <h1> User ID: ${title} </h1>
+                <h1> User ID: ${data.title} </h1>
                 <be>
-                    <h4>${month} "/" ${day} "/" ${year}</h4>
+                    <h4>${data.month} "/" ${data.day} "/" ${data.year}</h4>
                     <div class="d-flex justify-content-center"> <img src = ${img}></div>
             </div>`;
             document.getElementById('content').innerHTML = output;
