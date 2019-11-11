@@ -41,7 +41,7 @@ fetch('https://xkcd.com/info.0.json')
     };
 
 })
-res.redirect('/');
+res.render('index');
 });
 
 
