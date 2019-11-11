@@ -29,8 +29,7 @@ fetch('https://xkcd.com/info.0.json')
 
 .then(function(data) {
     let output ='<h2>Comics</h2>';
-    data.forEach((comic) => {
-        const {title, month, day, year, img } = comic
+    data => {
         output +=
          `<div>
                 <h1> User ID: ${data.title} </h1>
@@ -39,7 +38,7 @@ fetch('https://xkcd.com/info.0.json')
                     <div class="d-flex justify-content-center"> <img src = ${img}></div>
             </div>`;
             document.getElementById('content').innerHTML = output;
-    });
+    };
 
 })
 res.redirect('/');
