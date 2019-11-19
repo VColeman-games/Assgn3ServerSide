@@ -50,7 +50,7 @@ app.get('/random', function(req, res){
 
 
 
-    res.render('random.ejs', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: ComicMonth, ComicDay: ComicDay, ComicYear: ComicYear });
+    res.render('random.ejs');
 
 });
 
