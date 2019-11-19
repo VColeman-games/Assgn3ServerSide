@@ -17,7 +17,7 @@ var ComicTitle = "";
 var ComicMonth = "";
 var ComicDay = "";
 var ComicYear = "";
-
+var comicNumber = 2230;
 
 
 app.get('/',  function(req, res){
