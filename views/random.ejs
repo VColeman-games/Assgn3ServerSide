@@ -35,13 +35,32 @@
 </nav>
 
      <div >
+     <button id="change" >New Comic</button>
      <div id="content">
 
     <% include Frame.ejs %>
     
      </div>
      </div>
-
+<script>
+     $(document).ready(function(){
+        $('#eventForm').on('click', function () {
+          $.ajax({
+              url: '/update',
+              data: {},
+              type: 'GET',
+              success: function(data)
+                {
+                    $('div #content').html(data)
+                },
+                error: function()
+                {
+                    alert("Failed to get data.");
+              }
+        });
+        })
+});
+</script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
