@@ -30,12 +30,7 @@ fetch('https://xkcd.com/info.0.json')
      ComicYear = data.year;
      ComicImg = data.img;
      
-    <div>
-       <h1>{ComicTitle}</h1>
-       <h4>{ComicMonth} / {ComicDay} / {ComicYear}</h4>
-        <img src ={ComicImg} />
 
-    </div>
     
 
 });
