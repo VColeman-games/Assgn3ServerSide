@@ -46,8 +46,9 @@ res.render('index', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: Com
 
 
 app.get('/random', function(req, res){
-  console.log(ComicNumber);
-fetch('https://xkcd.com/' + ComicNumber + '/info.0.json')
+  var random = Math.floor((Math.random() * ComicNumber) + 1);  
+  console.log(random);
+fetch('https://xkcd.com/' + random + '/info.0.json')
 .then(res => res.json())
 .then(data => {
      ComicTitle = data.title;
