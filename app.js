@@ -12,37 +12,41 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ encoded: false}));
 
-
+var ComicImg = "";
+var ComicTitle = "";
+var ComicMonth = "";
+var ComicDay = "";
+var ComicYear = "";
 
 
 
 app.get('/',  function(req, res){
-
-
- res.render('index');
-});
-
-app.post('/getComic', function (req, res){
 fetch('https://xkcd.com/info.0.json')
-.then(function(res){  res.json()
-})
+.then(res => res.json())
+.then(data => {
+     ComicTitle = data.title;
+     ComicMonth = data.month;
+     ComicDay = data.day;
+     ComicYear = data.year;
+     ComicImg = data.img;
+     
+    <div>
+       <h1>{ComicTitle}</h1>
+       <h4>{ComicMonth} / {ComicDay} / {ComicYear}</h4>
+        <img src ={ComicImg} />
 
-.then(function(data) {
-    let output ='<h2>Comics</h2>';
-    data => {
-        output +=
-         `<div>
-                <h1> User ID: ${data.title} </h1>
-                <be>
-                    <h4>${data.month} "/" ${data.day} "/" ${data.year}</h4>
-                    <div class="d-flex justify-content-center"> <img src = ${img}></div>
-            </div>`;
-            document.getElementById('content').innerHTML = output;
-    };
+    </div>
+    
 
-})
-res.render('index');
 });
+
+
+res.render('index', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: ComicMonth, ComicDay: ComicDay, ComicYear: ComicYear });
+});
+
+
+
+
 
 
 
