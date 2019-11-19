@@ -17,7 +17,7 @@ var ComicTitle = "";
 var ComicMonth = "";
 var ComicDay = "";
 var ComicYear = "";
-var comicNumber = 2230;
+var ComicNumber = 2230;
 
 
 app.get('/',  function(req, res){
@@ -46,7 +46,8 @@ res.render('index', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: Com
 
 
 app.get('/random', function(req, res){
-
+  var random = Math.floor((Math.random() * ComicNumber) + 1);  
+console.log(random);
 
 
 
