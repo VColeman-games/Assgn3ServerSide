@@ -47,11 +47,23 @@ res.render('index', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: Com
 
 app.get('/random', function(req, res){
   var random = Math.floor((Math.random() * ComicNumber) + 1);  
-console.log(random);
+  console.log(random);
+fetch('https://xkcd.com/' + random + 'info.0.json')
+.then(res => res.json())
+.then(data => {
+     ComicTitle = data.title;
+     ComicMonth = data.month;
+     ComicDay = data.day;
+     ComicYear = data.year;
+     ComicImg = data.img;
+     
+
+    
+
+});
 
 
-
-    res.render('random.ejs');
+    res.render('random.ejs', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: ComicMonth, ComicDay: ComicDay, ComicYear: ComicYear });
 
 });
 
