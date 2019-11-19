@@ -89,7 +89,7 @@ fetch('https://xkcd.com/' + random + '/info.0.json')
 
 
 
-    res.render('random.ejs', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: ComicMonth, ComicDay: ComicDay, ComicYear: ComicYear });
+    res.render('Frame.ejs', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: ComicMonth, ComicDay: ComicDay, ComicYear: ComicYear });
 
 });
 
