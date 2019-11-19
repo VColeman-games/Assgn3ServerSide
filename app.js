@@ -17,7 +17,7 @@ var ComicTitle = "";
 var ComicMonth = "";
 var ComicDay = "";
 var ComicYear = "";
-var ComicNumber = 2230;
+var ComicNumber = Math.floor((Math.random() * 2230) + 1);
 
 
 app.get('/',  function(req, res){
@@ -46,7 +46,6 @@ res.render('index', {ComicImg: ComicImg, ComicTitle: ComicTitle, ComicMonth: Com
 
 
 app.get('/random', function(req, res){
-  var random = Math.floor((Math.random() * ComicNumber) + 1);  
   console.log(random);
 fetch('https://xkcd.com/' + random + '/info.0.json')
 .then(res => res.json())
